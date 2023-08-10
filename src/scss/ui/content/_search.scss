@@ -1,0 +1,38 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.search {
+    background-color: var.$lightGrey;
+    padding: 5rem 0;
+
+    &__heading {
+        text-align: center;
+        margin: 0;
+        color: var.$grey;
+    }
+}
+
+.form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    @include mix.tablet { 
+        @include mix.grid(4, 3rem);
+    }
+
+    &__field {
+        padding: 1rem;
+        border: 1px solid lighten(var.$grey, 50%);
+        margin-bottom: 2rem;
+
+        @include mix.tablet { 
+            margin-bottom: 0;
+        }
+    }
+
+    &__submit {
+        @include mix.button(var.$primary, var.$white);
+        margin-top: 0;
+    }
+}
