@@ -1,0 +1,64 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.events {
+    padding: 5rem 0;
+
+    &__heading {
+        text-align: center;
+        margin: 0;
+        color: var.$grey;
+    }
+
+    &__grid {
+        margin-top: 2rem;
+        @include mix.grid(1, 2rem);
+
+        @include mix.tablet { 
+            @include mix.grid(3, 2rem);
+        }
+    }
+}
+
+.event {
+    border: 1px solid var.$lightGrey;
+
+    &__image {
+        width: 100%;
+    }
+
+    &__content {
+        padding: 2rem;
+    }
+
+    &__date {
+        font-size: 1.4rem;
+    }
+
+    &__name {
+        color: var.$grey;
+        margin: 1rem 0;
+    }
+
+    &__author {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    &__author-image {
+        width: 10rem;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &__organized-text,
+    &__organized-name {
+        margin: .5rem 0;
+    }
+
+    &__organized-text {
+        font-weight: 700;
+    }
+}
