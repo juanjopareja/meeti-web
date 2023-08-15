@@ -1,0 +1,34 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.groups {
+    color: var.$white;
+    padding: 5rem 0;
+    background-image: linear-gradient(to bottom, 
+        var.$primary 0%, var.$primary 50%, 
+        var.$secondary 50%, var.$secondary 100%);
+
+    @include mix.tablet { 
+        background-image: linear-gradient(to right, 
+        var.$primary 0%, var.$primary 50%, 
+        var.$secondary 50%, var.$secondary 100%);
+    }
+    
+    &__grid {
+        @include mix.grid(1, 5rem);
+
+        @include mix.tablet { 
+            @include mix.grid(2, 5rem);
+        }
+    }
+
+    &__heading {
+        font-size: 3rem;
+    }
+
+    &__text {
+        color: var.$white;
+        font-size: 2.4rem;
+        line-height: 2;
+    }
+}
