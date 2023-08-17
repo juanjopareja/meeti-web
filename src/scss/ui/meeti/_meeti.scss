@@ -1,0 +1,21 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.meeti {
+    &__name {
+        text-align: center;
+        margin: 0;
+        color: var.$grey;
+        margin-bottom: 5rem;
+    }
+
+    &__grid {
+        @include mix.tablet { 
+            @include mix.grid(3, 2rem);
+        }
+    }
+
+    &__info {
+        grid-column: 1 / 3;
+    }
+}

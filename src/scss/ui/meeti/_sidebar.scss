@@ -1,0 +1,19 @@
+@use 'base/variables' as var;
+
+.sidebar {
+    &__content {
+        background-color: var.$secondary;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    &__heading,
+    &__text {
+        color: var.$white;
+    }
+
+    &__label {
+        font-weight: 700;
+    }
+    
+}
